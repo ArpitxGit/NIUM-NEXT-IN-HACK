@@ -17,17 +17,37 @@ function App() {
   const [userData, setUserData] = useState({});
 
   let styles = {
+    Startbutton: {
+      width: "100%",
+      maxWidth: 220,
+      cursor: "pointer",
+      background: "#0F6292",
+      border: "1px solid #0F6292",
+      boxSizing: "border-box",
+      borderRadius: "25px",
+      fontSize: 26,
+      color: "#ffffff",
+      fontWeight: 100,
+      textAlign: "center",
+      padding: "12px 30px 12px 30px",
+      marginTop: 15,
+      marginLeft: 470,
+      display: "relative",
+      justifyContent: "center",
+
+    },
     button: {
       width: "100%",
-      maxWidth: 200,
+      maxWidth: 220,
       cursor: "pointer",
-      background: "#8347E5",
-      border: "1px solid #8347E5",
+      background: "#0F6292",
+      border: "1px solid #ffffff",
       boxSizing: "border-box",
-      borderRadius: "15px",
-      fontSize: 16,
-      color: "#000000",
-      fontWeight: 700,
+      borderRadius: "25px",
+      fontSize: 26,
+      color: "#ffffff",
+      fontWeight: 100,
+      textAlign: "center",
       padding: "12px 30px 12px 30px",
       marginTop: 15,
       display: "flex",
@@ -150,65 +170,43 @@ function App() {
   };
   const loggedInView = (
     <>
-      <button onClick={getUserInfo} className="card" style={styles.button}>
-        Get User Info
-      </button>
-      <button onClick={getChainId} className="card" style={styles.button}>
-        Get Chain ID
-      </button>
-      <button onClick={getAccounts} className="card" style={styles.button}>
-        Get Accounts
-      </button>
-      <button onClick={getBalance} className="card" style={styles.button}>
-        Get Balance
-      </button>
-      <button onClick={sendTransaction} className="card" style={styles.button}>
-        Send Transaction
-      </button>
-      <button
-        onClick={sendContractTransaction}
-        className="card"
-        style={styles.button}
-      >
-        Send Approve Transaction
-      </button>
-
-      <button onClick={getPrivateKey} className="card" style={styles.button}>
-        Get Private Key
-      </button>
-      <button onClick={logout} className="card" style={styles.button}>
-        Logout
-      </button>
-
-      <div id="console" style={{ whiteSpace: "pre-line" }}>
-        <p style={{ whiteSpace: "pre-line" }}></p>
-      </div>
-    </>
-  );
-
-  const unloggedInView = (
-    <button onClick={login} className="card" style={styles.button}>
-      Login
-    </button>
-  );
-
-  return (
-    <div
-      className="container"
-      style={{
-        textAlign: "center",
-        color: "white",
-        paddingLeft: "5%",
-        paddingRight: "5%",
-      }}
-    >
-      <h3 style={{ textAlign: "center", marginTop: 30 }}>
-        Web3Auth React Example
-      </h3>
       <div className="row">
         <div className="col-md-3">
-          {" "}
-          <div className="grid">{provider ? loggedInView : unloggedInView}</div>
+          <div className="grid">
+            <button onClick={getUserInfo} className="card" style={styles.button}>
+              Get User Info
+            </button>
+            <button onClick={getChainId} className="card" style={styles.button}>
+              Get Chain ID
+            </button>
+            <button onClick={getAccounts} className="card" style={styles.button}>
+              Get Accounts
+            </button>
+            <button onClick={getBalance} className="card" style={styles.button}>
+              Get Balance
+            </button>
+            <button onClick={sendTransaction} className="card" style={styles.button}>
+              Send Transaction
+            </button>
+            <button
+              onClick={sendContractTransaction}
+              className="card"
+              style={styles.button}
+            >
+              Send Approve Transaction
+            </button>
+
+            <button onClick={getPrivateKey} className="card" style={styles.button}>
+              Get Private Key
+            </button>
+            <button onClick={logout} className="card" style={styles.button}>
+              Logout
+            </button>
+
+            <div id="console" style={{ whiteSpace: "pre-line" }}>
+              <p style={{ whiteSpace: "pre-line" }}></p>
+            </div>
+          </div>
         </div>
         <div className="col-md-9">
           <div style={{ marginTop: 20, textAlign: "left" }}>
@@ -224,6 +222,43 @@ function App() {
             user:{" "}
             <span style={{ fontSize: 12 }}>{JSON.stringify(userData)}</span>
           </div>
+        </div>
+      </div>
+    </>
+  );
+
+  const unloggedInView = (
+    <div className="row">
+      <div>
+        <button onClick={login} className="card" style={styles.Startbutton}>
+          Login as Admin
+        </button>
+        <br/>
+        <br/>
+        <button onClick={login} className="card" style={styles.Startbutton}>
+          Login as User
+        </button>
+      </div>
+    </div>
+    
+  );
+
+  return (
+    <div
+      className="container"
+      style={{
+        textAlign: "center",
+        color: "white",
+        paddingLeft: "5%",
+        paddingRight: "5%",
+      }}
+    >
+      <h3 style={{ textAlign: "center", marginTop: 30 }}>
+        ICC web3 Ticketing
+      </h3>
+      <div className="row">
+        <div className="col-md-12">
+          <div>{provider ? loggedInView : unloggedInView}</div>
         </div>
       </div>
     </div>
