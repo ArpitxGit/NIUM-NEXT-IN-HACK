@@ -19,9 +19,9 @@ function App() {
   let styles = {
     Startbutton: {
       width: "100%",
-      maxWidth: 220,
+      maxWidth: 235,
       cursor: "pointer",
-      background: "#0F6292",
+      background: "#4681f4",
       border: "1px solid #0F6292",
       boxSizing: "border-box",
       borderRadius: "25px",
@@ -34,13 +34,14 @@ function App() {
       marginLeft: 470,
       display: "relative",
       justifyContent: "center",
+      alignItems: 'center'
 
     },
     button: {
       width: "100%",
       maxWidth: 220,
       cursor: "pointer",
-      background: "#0F6292",
+      background: "#4681f4",
       border: "1px solid #ffffff",
       boxSizing: "border-box",
       borderRadius: "25px",
@@ -52,6 +53,7 @@ function App() {
       marginTop: 15,
       display: "flex",
       justifyContent: "center",
+      alignItems: 'center'
     },
   };
   useEffect(() => {
@@ -254,7 +256,7 @@ function App() {
       }}
     >
       <h3 style={{ textAlign: "center", marginTop: 30 }}>
-        ICC web3 Ticketing
+        ICC Web3 Ticket Booking System
       </h3>
       <div className="row">
         <div className="col-md-12">
