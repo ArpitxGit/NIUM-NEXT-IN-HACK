@@ -1,22 +1,43 @@
 import { useEffect, useState } from "react";
+import React from "react";
 // import { Web3Auth } from "@web3auth/modal";
 import { Web3Auth } from "@web3auth/web3auth";
 import { CHAIN_NAMESPACES } from "@web3auth/base";
 import RPC from "./web3RPC";
 import "./App.css";
+import admin from "./admin";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 const clientId =
   "BMkKHE4n2KgzLWFXDmpCVIpWMggQ8Pe8_4pRkbm9aNafKnn0WRlb1zoy6JlOh2nN2Aw54jIAbFbsAUut3tuJr8w"; // get from https://dashboard.web3auth.io
 
 function App() {
   const [web3auth, setWeb3auth] = useState(null);
-  const [provider, setProvider] = useState(null);
+  const [provider, setProvider] = useState(true);
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState("");
   const [chainId, setChainId] = useState("");
   const [userData, setUserData] = useState({});
 
   let styles = {
+    Portalbutton: {
+      width: "100%",
+      maxWidth: 235,
+      cursor: "pointer",
+      background: "#4681f4",
+      border: "1px solid #0F6292",
+      boxSizing: "border-box",
+      borderRadius: "25px",
+      fontSize: 26,
+      color: "#ffffff",
+      fontWeight: 100,
+      textAlign: "center",
+      padding: "12px 30px 12px 30px",
+      marginTop: 15,
+      display: "relative",
+      justifyContent: "center",
+      alignItems: 'center'
+    },
     Startbutton: {
       width: "100%",
       maxWidth: 235,
@@ -172,7 +193,7 @@ function App() {
   };
   const loggedInView = (
     <>
-      <div className="row">
+      {/*<div className="row">
         <div className="col-md-3">
           <div className="grid">
             <button onClick={getUserInfo} className="card" style={styles.button}>
@@ -225,46 +246,64 @@ function App() {
             <span style={{ fontSize: 12 }}>{JSON.stringify(userData)}</span>
           </div>
         </div>
+      </div>*/}
+
+<div className="row">
+      <div>
+        <button className="card" style={styles.Startbutton}>
+          Login as User
+        </button>
+        <br/>
+        <br/>
+        <Link to={"/admin"}>
+        <button className="card" style={styles.Startbutton}>
+          Login as Admin
+        </button>
+        </Link>
       </div>
+    </div>
     </>
   );
 
   const unloggedInView = (
-    <div className="row">
       <div>
         <button onClick={login} className="card" style={styles.Startbutton}>
-          Login as Admin
-        </button>
-        <br/>
-        <br/>
-        <button onClick={login} className="card" style={styles.Startbutton}>
-          Login as User
+          Login to the portal
         </button>
       </div>
-    </div>
-    
   );
 
   return (
-    <div
-      className="container"
-      style={{
-        textAlign: "center",
-        color: "white",
-        paddingLeft: "5%",
-        paddingRight: "5%",
-      }}
-    >
-      <h3 style={{ textAlign: "center", marginTop: 30 }}>
-        ICC Web3 Ticket Booking System
-      </h3>
-      <div className="row">
-        <div className="col-md-12">
-          <div>{provider ? loggedInView : unloggedInView}</div>
+    <Router>
+      <div
+        className="container"
+        style={{
+          textAlign: "center",
+          color: "white",
+          paddingLeft: "5%",
+          paddingRight: "5%",
+        }}
+      >
+        <h3 style={{ textAlign: "center", marginTop: 30 }}>
+          ICC Web3 Ticket Booking System
+        </h3>
+        <div className="row">
+          <div className="col-md-12">
+            <div>{provider ? unloggedInView : loggedInView}</div>
+          </div>
         </div>
       </div>
-    </div>
+      <Routes>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route exact path="/admin">
+          <admin />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
