@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./admin.css";
-function Admin() {
+function admin() {
     return (
       <div className="row">
         <div className="col-md-3">
@@ -13,4 +13,4 @@ function Admin() {
     );
 }
 
-export default Admin;
+export default admin;
