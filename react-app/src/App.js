@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="container my-3">
       <Routes>
-        <Route exact path="/" element={<App/>} />
-        <Route exact path="/Admin" element={<Admin/>} />
+        <Route exact path="/" element={<Landing/>} />
+        <Route exact path="/admin" element={<Admin/>} />
       </Routes>
     </div>
   );

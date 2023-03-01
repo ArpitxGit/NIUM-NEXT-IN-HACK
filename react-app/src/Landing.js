@@ -287,7 +287,7 @@ function Landing() {
             </h3>
             <div className="row">
             <div className="col-md-12">
-                <div>{provider ? unloggedInView : loggedInView}</div>
+                <div>{provider ? loggedInView : unloggedInView}</div>
             </div>
             </div>
         </div>
