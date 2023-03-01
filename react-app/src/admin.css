@@ -4,3 +4,32 @@ p{
     text-align: center;
     color: #ffffff;
 }
+
+#home2{
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    text-align: left;
+    background: #3009bf;
+    color: #ffffff;
+    margin-top: 250 rem;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    text-align: center;
+}
+
+#addmatch{
+    width: 30%;
+    background: #051942;
+    border: 1px solid #ffffff;
+    border-radius: 35px;
+    font-size: 16;
+    color: #ffffff;
+    font-weight: 300;
+    text-align: center;
+    padding: 12px 30px 12px 30px;
+    margin-top: 15;
+    margin-left: 450px;
+    justify-content: center;
+    align-items: center;
+}

@@ -268,7 +268,7 @@ function Landing() {
 
   const unloggedInView = (
       <div>
-        <button onClick={login} className="card" style={styles.Startbutton}>
+        <button onClick={loggedInView} className="card" style={styles.Startbutton}>
           Login to the portal
         </button>
       </div>
@@ -289,7 +289,7 @@ function Landing() {
             </h3>
             <div className="row">
             <div className="col-md-12">
-                <div>{provider ? unloggedInView : loggedInView}</div>
+                <div>{loggedInView}</div>
             </div>
             </div>
         </div>
