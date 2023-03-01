@@ -254,7 +254,7 @@ function Landing() {
         </button>
         <br/>
         <br/>
-        <Link to={"/Admin"}>
+        <Link to={"/admin"}>
         <button className="card" style={styles.Startbutton}>
           Login as Admin
         </button>
@@ -287,7 +287,7 @@ function Landing() {
             </h3>
             <div className="row">
             <div className="col-md-12">
-                <div>{provider ? loggedInView : unloggedInView}</div>
+                <div>{provider ? unloggedInView : loggedInView}</div>
             </div>
             </div>
         </div>
