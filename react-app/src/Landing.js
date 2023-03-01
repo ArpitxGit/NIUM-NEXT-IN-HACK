@@ -249,14 +249,16 @@ function Landing() {
 
 <div className="row">
       <div>
+        <Link to={"/admin"}>
+          <button className="card" style={styles.Startbutton}>
+            Login as Admin
+          </button>
+        </Link>
+        <br/>
+        <br/>
+        <Link to={"/matchlist"}>
         <button className="card" style={styles.Startbutton}>
           Login as User
-        </button>
-        <br/>
-        <br/>
-        <Link to={"/admin"}>
-        <button className="card" style={styles.Startbutton}>
-          Login as Admin
         </button>
         </Link>
       </div>

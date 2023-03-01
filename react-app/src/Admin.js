@@ -6,7 +6,8 @@ function Admin() {
       <div className="row">
         <div className="col-md-3">
             <div></div>
-            <p>This is the second page.</p>
+            <p>Welcome Administrator</p>
+            <p>Create Matches</p>
             <div></div>
         </div>
       </div>
