@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Web3 from "web3";
 import { useEffect, useState } from "react";
 import "./matchlist.css";
-import BuyTickets from "./BuyTickets";
+// import BuyTickets from "./BuyTickets";
 
 const Matchlist = () => {
   const [matches, setMatches] = useState([]);
@@ -697,9 +697,9 @@ const Matchlist = () => {
 
   return (
     <div>
-      {/* {selectedMatch ? (
-          <div>
-            <h2>{selectedMatch[1]}</h2>
+      {selectedMatch ? (
+          <div class="container1">
+            <h1>{selectedMatch[1]}</h1>
             <p>
               Location: {selectedMatch[2]}
               <br />
@@ -711,40 +711,53 @@ const Matchlist = () => {
               <br />
               Active: {selectedMatch[6].toString()}
             </p>
-            <button onClick={() => setSelectedMatch(null)}>Back to List</button>
-            <button onClick={()=>{<BuyTickets/>}}>Buy Ticket</button>
+            <button id="b1" onClick={() => setSelectedMatch(null)}>Back to List</button>
+            <Link to={"/buyTickets"}><button id="b2">Buy Ticket</button></Link>
           </div>
-        ) : 
-        ( )} */}
-      <h2>List of matches</h2>
-      <div class="container1">
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-        <div class="container2">
-          <h3>Ind vs Aus</h3>
-        </div>
-      </div>
+        ) : (
+          <div>
+            <h2>List of matches</h2>
+            <div class="container1">
+            {matches.map((match) => (
+              //  <li key={match[0]} onClick={() => handleMatchClick(match)}>
+              //    <h3>{match[1]}</h3>
+              //    <p>Location: {match[2]}</p>
+              //  </li>
+              
+                <div class="container2">
+                  <h3 key={match[0]} onClick={() => handleMatchClick(match)}>{match[1]}</h3>
+                </div>
+              
+             ))}
+             </div>
+            
+              {/* <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div>
+              <div class="container2">
+                <h3 key={matches[0]} onClick={() => handleMatchClick(matches)}>Ind vs Aus</h3>
+              </div> */}
+          </div>
+        )}
+      
     </div>
   );
 };
 
 export default Matchlist;
+

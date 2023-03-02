@@ -714,6 +714,7 @@
 //             <button onClick={() => setSelectedMatch(null)}>Back to List</button>
 //             <button onClick={()=>{<BuyTickets/>}}>Buy Ticket</button>
 //           </div>
+//         </div>
 //         ) 
       
 

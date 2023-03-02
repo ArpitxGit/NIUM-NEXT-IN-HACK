@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Web3 from "web3";
+import styles from './TicketPurchase.module.css';
 
 const BuyTickets = () => {
   const { matchId } = useParams();
@@ -704,14 +705,23 @@ const BuyTickets = () => {
     }
   };
 
+
   return (
-    <div>
-      <h1>Buy Tickets</h1>
-      <label>
-        Quantity:
+    // <div>
+    //   <header><h1>Buy Tickets</h1></header>
+    //   <label>
+    //     Quantity:
+    //     <input type="number" value={quantity} onChange={handleQuantityChange} />
+    //   </label>
+    //   <button onClick={handleBuyTickets}>Buy Tickets</button>
+    // </div>
+    <div className={styles.TicketPurchase}>
+      <div className={styles.userInputBox}>
+        <p class="heading">Enter Amount of Tickets:</p>
         <input type="number" value={quantity} onChange={handleQuantityChange} />
-      </label>
-      <button onClick={handleBuyTickets}>Buy Tickets</button>
+        <button onClick={handleBuyTickets}>Buy</button>
+
+      </div>
     </div>
   );
 };

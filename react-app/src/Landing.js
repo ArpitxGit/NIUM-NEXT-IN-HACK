@@ -12,7 +12,7 @@ const clientId =
 
 function Landing() {
   const [web3auth, setWeb3auth] = useState(null);
-  const [provider, setProvider] = useState(true);
+  const [provider, setProvider] = useState(null);
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState("");
   const [chainId, setChainId] = useState("");
@@ -268,7 +268,7 @@ function Landing() {
 
   const unloggedInView = (
       <div>
-        <button onClick={loggedInView} className="card" style={styles.Startbutton}>
+        <button onClick={login} className="card" style={styles.Startbutton}>
           Login to the portal
         </button>
       </div>
@@ -289,7 +289,7 @@ function Landing() {
             </h3>
             <div className="row">
             <div className="col-md-12">
-                <div>{loggedInView}</div>
+                <div>{provider ? loggedInView : unloggedInView}</div>
             </div>
             </div>
         </div>
