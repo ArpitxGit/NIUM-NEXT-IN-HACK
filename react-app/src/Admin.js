@@ -36,7 +36,8 @@ function Admin() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="admin" onSubmit={handleSubmit}>
+    <h1>Admin console for adding matches</h1>
       <div className="container1">
         <div>
           <label htmlFor="matchName">Match Name:</label>
