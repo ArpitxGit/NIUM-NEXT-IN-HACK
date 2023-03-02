@@ -1,35 +1,28 @@
-.form-container {
+#admin .container1{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 20px;
     padding: 20px;
-    border: 1px solid black;
+    border: 5px solid aqua;
     border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 420px;
   }
   
-  .form-group {
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
   
-  .form-label {
+  #admin label {
     font-weight: bold;
-    margin-bottom: 5px;
     color:dodgerblue;
   }
   
-  .form-input {
+  #admin input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
   
-  .form-button {
-    background-color: #007bff;
+  #admin button {
+    background-color: #366292;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -39,7 +32,7 @@
     transition: 0.2s ease;
   }
   
-  .form-button:hover {
+  #admin button:hover {
     background-color: #0062cc;
   }
   
