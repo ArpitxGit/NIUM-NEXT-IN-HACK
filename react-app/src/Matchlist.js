@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import Web3 from "web3";
 import {useEffect, useState} from "react";
 import "./matchlist.css";
+import BuyTickets from "./BuyTickets";
 
 
 
@@ -710,6 +711,7 @@ const Matchlist = () => {
       setSelectedMatch(match);
     };
   
+
     return (
       <div>
         {selectedMatch ? (
@@ -727,7 +729,7 @@ const Matchlist = () => {
               Active: {selectedMatch[6].toString()}
             </p>
             <button onClick={() => setSelectedMatch(null)}>Back to List</button>
-            <button>Buy Ticket</button>
+            <button onClick={()=>{<BuyTickets/>}}>Buy Ticket</button>
           </div>
         ) : (
           <ul>
@@ -742,6 +744,8 @@ const Matchlist = () => {
       </div>
     );
   };
+  
+
   
 // function Matchlist() {
 //     return (

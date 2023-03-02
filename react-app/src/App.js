@@ -7,9 +7,11 @@ import React from "react";
 import "./App.css";
 import Landing from "./Landing";
 import Admin from "./Admin";
+import BuyTickets from "./BuyTickets";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Matchlist from "./Matchlist";
+
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
         <Route exact path="/" element={<Landing/>} />
         <Route exact path="/admin" element={<Admin/>} />
         <Route exact path="/matchlist" element={<Matchlist/>} />
-        
+        <Route exact path="/buyTickets" element={<BuyTickets/>}/>
       </Routes>
     </div>
   );

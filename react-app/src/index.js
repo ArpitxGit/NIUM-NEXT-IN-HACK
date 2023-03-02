@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Admin from "./Admin";
 import Matchlist from "./Matchlist";
+import BuyTickets from "./BuyTickets";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -17,6 +18,7 @@ root.render(
           <Route exact path="/" element={ <App /> }/>
           <Route exact path="/admin" element={ <Admin /> } />
           <Route exact path="/matchlist" element={ <Matchlist /> } />
+          <Route exact path="/buyTickets" element={<BuyTickets/>}/>
         </Routes>
       </Router>
     </React.StrictMode>,
