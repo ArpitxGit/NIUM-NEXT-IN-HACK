@@ -19,6 +19,7 @@ function App() {
         <Route exact path="/" element={<Landing/>} />
         <Route exact path="/admin" element={<Admin/>} />
         <Route exact path="/matchlist" element={<Matchlist/>} />
+        
       </Routes>
     </div>
   );
