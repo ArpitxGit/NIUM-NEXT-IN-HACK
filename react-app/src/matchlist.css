@@ -36,6 +36,7 @@ h2 {
   margin: 2rem;
   border-radius: 15px;
   align-content: center;
+  cursor: pointer;
 }
 
 h3{
